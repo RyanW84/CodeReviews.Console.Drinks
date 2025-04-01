@@ -8,6 +8,19 @@ namespace Drinks.RyanW84;
 
 public class Validator
     {
+    public static bool IsIDValid(string stringInput)
+        {
+      if(string.IsNullOrEmpty(stringInput))
+      {  return false; }
+
+      foreach (char c in stringInput)
+            {
+            if(!char.IsDigit(c)) return false;
+            }
+
+            return true;
+        }
+
     internal static bool IsStringValid(string stringInput)
         {
        if (string.IsNullOrEmpty(stringInput))

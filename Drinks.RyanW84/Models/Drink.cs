@@ -1,22 +1,17 @@
-﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Newtonsoft.Json;
 
-namespace Drinks.RyanW84.Models;
-
-public class Drinks
+namespace drinks_info.Models
+{
+    public class Drinks
     {
-    [JsonProperty("drinks")]
-    public List<DrinksList> DrinksList { get; set; }
+        [JsonProperty("drinks")]
+        public List<Drink> DrinksList { get; set; }
     }
 
-public class DrinksList
+    public class Drink
     {
-    public string idDrink {  get; set; }
-    public string strDrink { get; set; }
+        public string idDrink { get; set; }
+        public string strDrink { get; set; }
     }
-
+}

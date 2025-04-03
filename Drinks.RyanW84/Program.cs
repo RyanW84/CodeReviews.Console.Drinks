@@ -1,4 +1,12 @@
-﻿using Drinks.RyanW84;
+﻿using System;
 
-UserInput userInput = new();
-userInput.GetCategoriesInput();
+namespace drinks_info;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        UserInput userInput = new();
+        userInput.GetCategoriesInput();
+    }
+}

@@ -1,21 +1,16 @@
-﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Newtonsoft.Json;
 
-namespace Drinks.RyanW84.Models;
-
-public class Category
+namespace drinks_info.Models
+{
+    public class Category
     {
-    public string strCategory{  get; set; }
+        public string strCategory { get; set; }
     }
 
     public class Categories
     {
-    [JsonProperty("drinks")]
-
-    public List<Category> CategoriesList { get; set; }
+        [JsonProperty("drinks")]
+        public List<Category> CategoriesList { get; set; }
     }
+}

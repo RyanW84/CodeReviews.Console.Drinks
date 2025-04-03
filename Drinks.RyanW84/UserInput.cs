@@ -1,63 +1,64 @@
-﻿using System;
-using System.Collections.Generic;
+using System;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-using Drinks.RyanW84.Models;
-
-namespace Drinks.RyanW84;
-
-public class UserInput 
+namespace drinks_info
+{
+    public class UserInput
     {
-    DrinksService drinksService = new();
+        DrinksService drinksService = new();
 
-    internal void GetCategoriesInput()
+        internal void GetCategoriesInput()
         {
-        var categories =drinksService.GetCategories();
+            var categories = drinksService.GetCategories();
 
-        Console.WriteLine("Choose Category:");
+            Console.WriteLine("Choose category:");
 
-        string category = Console.ReadLine();
+            string category = Console.ReadLine();
 
-        while (!Validator.IsStringValid(category))
+            while (!Validator.IsStringValid(category))
             {
-            Console.WriteLine("Invalid Category");
-            category = Console.ReadLine();
+                Console.WriteLine("\nInvalid category");
+                category = Console.ReadLine();
             }
 
-            if (!categories.Any(x => x.strCategory == category))
+            if(!categories.Any(x => x.strCategory == category)) 
             {
-            Console.WriteLine("Category doesn't exist.");
-            GetCategoriesInput();
+                Console.WriteLine("Category doesn't exist.");
+                GetCategoriesInput();
             }
-
+            
             GetDrinksInput(category);
         }
 
-    private void GetDrinksInput(string category)
+        private void GetDrinksInput(string category)
         {
-        var drinks = drinksService.GetDrinksByCategory(category);
-        drinksService.GetDrinksByCategory(category);
+            var drinks = drinksService.GetDrinksByCategory(category);
 
-        Console.WriteLine("Choose a drink or got back to Categories by typing 0:");
+            Console.WriteLine("Choose a drink or go back to category menu by typing 0:");
 
-        string drink = Console.ReadLine();
+            string drink = Console.ReadLine();
 
-        if (drink == "0")
-            GetCategoriesInput();
+            if (drink == "0") GetCategoriesInput();
 
-        while (!Validator.IsIDValid(drink))
+            while (!Validator.IsIdValid(drink))
             {
-            Console.WriteLine("Invalid drink");
-            drink = Console.ReadLine();
+                Console.WriteLine("\nInvalid drink");
+                drink = Console.ReadLine();
             }
 
-        if (!drinks.Any(x => x.idDrink == drink))
+            if(!drinks.Any(x => x.idDrink == drink)) 
             {
-            Console.WriteLine("Drink doesn't Exist");
-            GetDrinksInput(category);
+                Console.WriteLine("Drink doesn't exist.");
+                GetDrinksInput(category);
             }
+
+
+            drinksService.GetDrink(drink);
+
+            Console.WriteLine("Press any key to go back to categories menu");
+            Console.ReadKey();
+            if (!Console.KeyAvailable) GetCategoriesInput();
+
         }
     }
-
+}

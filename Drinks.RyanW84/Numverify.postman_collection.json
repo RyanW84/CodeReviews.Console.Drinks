@@ -1,0 +1,516 @@
+{
+	"info": {
+		"_postman_id": "64e8008e-a017-4b0b-9e2f-fb4e1972c711",
+		"name": "Numverify",
+		"description": "NumVerify offers a full-featured yet simple RESTful JSON API for national and international phone number validation and information lookup for a total of 232 countries around the world.\n\nRequested numbers are processed in real-time, cross-checked with the latest international numbering plan databases and returned in handy JSON format enriched with useful carrier, geographical location and line type data.\n\nIntegrating the numverify API into your application will enable you to verify the validity of phone numbers at the point of entry, protecting you from fraud and increasing good leads.\n\n# Quick Start Guide\n\n## Step 1: Your API Access Key\n\nTo get started quickly, you need to fork the Numverify Postman Collection. Simply click the button below to fork it.\n\n[<img src=\"https://run.pstmn.io/button.svg\">](https://god.gw.postman.com/run-collection/10131015-0760d25e-b802-412e-b0e4-26e5ca3b9ffa?action=collection/fork)\n\n### Step 2: Get your API Access Key\n\n1. Go to the [Numverify](https://numverify.com/?utm_source=Postman&utm_medium=Referral) website and choose the right subscription plan for your particular project.\n    \n2. Get your personal API Access Key on the [Dashboard](https://numverify.com/dashboard) to authenticate with the API. Keep it safe! You can reset it at any time in your Account Dashboard.\n    \n\n## Step 3: Make your first API call\n\nNumverify Postman collection contains all the endpoints supported by Numverify API.\n\nWe recommend you to start with the validate endpoint to validate any phone across across the globe.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43335134"
+	},
+	"item": [
+		{
+			"name": "Validate",
+			"item": [
+				{
+					"name": "Validate Phone Number",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://apilayer.net/api/validate?number=447825288739",
+							"protocol": "https",
+							"host": [
+								"apilayer",
+								"net"
+							],
+							"path": [
+								"api",
+								"validate"
+							],
+							"query": [
+								{
+									"key": "number",
+									"value": "447825288739",
+									"description": "[Required] Phone number with prefix country code – 1 in this case."
+								}
+							]
+						},
+						"description": "Using `Validate` endpoint, you can validate any phone number across the globe. Simply attach the phone number with `number` required parameter."
+					},
+					"response": [
+						{
+							"name": "200 OK – Validate Phone Number",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://apilayer.net/api/validate?access_key={PASTE_YOUR_API_KEY_HERE}&number=14158586273",
+									"protocol": "https",
+									"host": [
+										"apilayer",
+										"net"
+									],
+									"path": [
+										"api",
+										"validate"
+									],
+									"query": [
+										{
+											"key": "access_key",
+											"value": "{PASTE_YOUR_API_KEY_HERE}",
+											"description": "[Required] Specify your API access key, available in your account dashboard.\n"
+										},
+										{
+											"key": "number",
+											"value": "14158586273",
+											"description": "[Required] Phone number with prefix country code – 1 in this case."
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Tue, 19 Mar 2024 11:56:25 GMT"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; Charset=UTF-8"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "x-apilayer-transaction-id",
+									"value": "f81fb545-5e92-4ace-9cf8-8fda52637071"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "x-request-time",
+									"value": "0.011"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"valid\": true,\n    \"number\": \"14158586273\",\n    \"local_format\": \"4158586273\",\n    \"international_format\": \"+14158586273\",\n    \"country_prefix\": \"+1\",\n    \"country_code\": \"US\",\n    \"country_name\": \"United States of America\",\n    \"location\": \"Novato\",\n    \"carrier\": \"AT&T Mobility LLC\",\n    \"line_type\": \"mobile\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Validate Phone Number JSONP Callback",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://apilayer.net/api/validate?number=14158586273&callback=CALLBACK_FUNCTION",
+							"protocol": "https",
+							"host": [
+								"apilayer",
+								"net"
+							],
+							"path": [
+								"api",
+								"validate"
+							],
+							"query": [
+								{
+									"key": "number",
+									"value": "14158586273",
+									"description": "[Required] Phone number with prefix country code – 1 in this case."
+								},
+								{
+									"key": "callback",
+									"value": "CALLBACK_FUNCTION",
+									"description": "[Optional] Append any preferred JSONP callback function name."
+								}
+							]
+						},
+						"description": "The numverify API also supports JSONP Callbacks. To use this feature, simply attach:\n\n`callback = CALLBACK_FUNCTION`\n\nto any API Endpoint, and the result set will be returned wrapped in the callback function you specified."
+					},
+					"response": [
+						{
+							"name": "200 OK – Validate Phone Number JSONP Callback",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://apilayer.net/api/validate?access_key={PASTE_YOUR_API_KEY_HERE}&number=14158586273&callback=CALLBACK_FUNCTION",
+									"protocol": "https",
+									"host": [
+										"apilayer",
+										"net"
+									],
+									"path": [
+										"api",
+										"validate"
+									],
+									"query": [
+										{
+											"key": "access_key",
+											"value": "{PASTE_YOUR_API_KEY_HERE}",
+											"description": "[Required] Specify your API access key, available in your account dashboard.\n"
+										},
+										{
+											"key": "number",
+											"value": "14158586273",
+											"description": "[Required] Phone number with prefix country code – 1 in this case."
+										},
+										{
+											"key": "callback",
+											"value": "CALLBACK_FUNCTION",
+											"description": "[Optional] Append any preferred JSONP callback function name."
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Tue, 19 Mar 2024 12:07:29 GMT"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; Charset=UTF-8"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "x-apilayer-transaction-id",
+									"value": "c2042a86-3260-4070-b141-18f3fd24908e"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "x-request-time",
+									"value": "0.011"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"valid\": true,\n    \"number\": \"14158586273\",\n    \"local_format\": \"4158586273\",\n    \"international_format\": \"+14158586273\",\n    \"country_prefix\": \"+1\",\n    \"country_code\": \"US\",\n    \"country_name\": \"United States of America\",\n    \"location\": \"Novato\",\n    \"carrier\": \"AT&T Mobility LLC\",\n    \"line_type\": \"mobile\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Validate Phone Number JSON Formatting",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://apilayer.net/api/validate?number=14158586273&callback=CALLBACK_FUNCTION&format=1",
+							"protocol": "https",
+							"host": [
+								"apilayer",
+								"net"
+							],
+							"path": [
+								"api",
+								"validate"
+							],
+							"query": [
+								{
+									"key": "number",
+									"value": "14158586273",
+									"description": "[Required] Phone number with prefix country code – 1 in this case."
+								},
+								{
+									"key": "callback",
+									"value": "CALLBACK_FUNCTION",
+									"description": "[Optional] Append any preferred JSONP callback function name."
+								},
+								{
+									"key": "format",
+									"value": "1",
+									"description": "[Optional] Setting up 1 enhances readability of the numverify API response.\n"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK – Validate Phone Number JSON Formatting",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://apilayer.net/api/validate?access_key={PASTE_YOUR_API_KEY_HERE}&number=14158586273&callback=CALLBACK_FUNCTION&format=1",
+									"protocol": "https",
+									"host": [
+										"apilayer",
+										"net"
+									],
+									"path": [
+										"api",
+										"validate"
+									],
+									"query": [
+										{
+											"key": "access_key",
+											"value": "{PASTE_YOUR_API_KEY_HERE}",
+											"description": "[Required] Specify your API access key, available in your account dashboard.\n"
+										},
+										{
+											"key": "number",
+											"value": "14158586273",
+											"description": "[Required] Phone number with prefix country code – 1 in this case."
+										},
+										{
+											"key": "callback",
+											"value": "CALLBACK_FUNCTION",
+											"description": "[Optional] Append any preferred JSONP callback function name."
+										},
+										{
+											"key": "format",
+											"value": "1",
+											"description": "[Optional] Setting up 1 enhances readability of the numverify API response.\n"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Tue, 19 Mar 2024 12:12:21 GMT"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; Charset=UTF-8"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "x-apilayer-transaction-id",
+									"value": "7d0b7c79-dc83-42b7-833e-1db56da0a4a3"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "x-request-time",
+									"value": "0.014"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"valid\": true,\n    \"number\": \"14158586273\",\n    \"local_format\": \"4158586273\",\n    \"international_format\": \"+14158586273\",\n    \"country_prefix\": \"+1\",\n    \"country_code\": \"US\",\n    \"country_name\": \"United States of America\",\n    \"location\": \"Novato\",\n    \"carrier\": \"AT&T Mobility LLC\",\n    \"line_type\": \"mobile\"\n}"
+						}
+					]
+				}
+			],
+			"description": "Validate a phone number using `Validate` Numverify API endpoint."
+		},
+		{
+			"name": "Countries",
+			"item": [
+				{
+					"name": "List of Countries",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var template = `\r",
+									"<style type=\"text/css\">\r",
+									"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+									"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+									"    .tftable tr {background-color:#ffffff;}\r",
+									"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+									"    .tftable tr:hover {background-color:#e0ffff;}\r",
+									"</style>\r",
+									"\r",
+									"<table class=\"tftable\" border=\"1\">\r",
+									"    <tr>\r",
+									"        <th>Country Code</th>\r",
+									"        <th>Country Name</th>\r",
+									"        <th>Region</th>\r",
+									"        <th>Subregion</th>\r",
+									"    </tr>\r",
+									"    \r",
+									"    {{#each response}}\r",
+									"        <tr>\r",
+									"            <td>{{alpha2Code}}</td>\r",
+									"            <td>{{name}}</td>\r",
+									"            <td>{{region}}</td>\r",
+									"            <td>{{subregion}}</td>\r",
+									"        </tr>\r",
+									"    {{/each}}\r",
+									"</table>\r",
+									"`;\r",
+									"\r",
+									"function constructVisualizerPayload() {\r",
+									"    return {response: pm.response.json()}\r",
+									"}\r",
+									"\r",
+									"pm.visualizer.set(template, constructVisualizerPayload());\r",
+									"pm.test(\"Response status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://apilayer.net/api/countries",
+							"protocol": "https",
+							"host": [
+								"apilayer",
+								"net"
+							],
+							"path": [
+								"api",
+								"countries"
+							]
+						},
+						"description": "The numverify API supports phone number validation for a total of 232 countries (territories) around the world. Using the API's `countries` endpoint, you may access a comprehensive list of supported areas, including country names and dialling codes."
+					},
+					"response": [
+						{
+							"name": "200 OK – List of Countries",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://apilayer.net/api/countries?access_key={PASTE_YOUR_API_KEY_HERE}",
+									"protocol": "https",
+									"host": [
+										"apilayer",
+										"net"
+									],
+									"path": [
+										"api",
+										"countries"
+									],
+									"query": [
+										{
+											"key": "access_key",
+											"value": "{PASTE_YOUR_API_KEY_HERE}",
+											"description": "[Required] Specify your API access key, available in your account dashboard.\n"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Tue, 19 Mar 2024 12:18:16 GMT"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; Charset=UTF-8"
+								},
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "x-apilayer-transaction-id",
+									"value": "a7bd079c-3206-4339-8d42-12a75711dcb3"
+								},
+								{
+									"key": "access-control-allow-methods",
+									"value": "GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "x-request-time",
+									"value": "0.008"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"AF\": {\n        \"country_name\": \"Afghanistan\",\n        \"dialling_code\": \"+93\"\n    },\n    \"AL\": {\n        \"country_name\": \"Albania\",\n        \"dialling_code\": \"+355\"\n    },\n    \"DZ\": {\n        \"country_name\": \"Algeria\",\n        \"dialling_code\": \"+213\"\n    },\n    \"AS\": {\n        \"country_name\": \"American Samoa\",\n        \"dialling_code\": \"+1\"\n    },\n    \"AD\": {\n        \"country_name\": \"Andorra\",\n        \"dialling_code\": \"+376\"\n    },\n    \"AO\": {\n        \"country_name\": \"Angola\",\n        \"dialling_code\": \"+244\"\n    },\n    \"AI\": {\n        \"country_name\": \"Anguilla\",\n        \"dialling_code\": \"+1\"\n    },\n    \"AG\": {\n        \"country_name\": \"Antigua\",\n        \"dialling_code\": \"+1\"\n    },\n    \"AR\": {\n        \"country_name\": \"Argentina\",\n        \"dialling_code\": \"+54\"\n    },\n    \"AM\": {\n        \"country_name\": \"Armenia\",\n        \"dialling_code\": \"+374\"\n    },\n    \"AW\": {\n        \"country_name\": \"Aruba\",\n        \"dialling_code\": \"+297\"\n    },\n    \"AU\": {\n        \"country_name\": \"Australia\",\n        \"dialling_code\": \"+61\"\n    },\n    \"AT\": {\n        \"country_name\": \"Austria\",\n        \"dialling_code\": \"+43\"\n    },\n    \"AZ\": {\n        \"country_name\": \"Azerbaijan\",\n        \"dialling_code\": \"+994\"\n    },\n    \"BH\": {\n        \"country_name\": \"Bahrain\",\n        \"dialling_code\": \"+973\"\n    },\n    \"BD\": {\n        \"country_name\": \"Bangladesh\",\n        \"dialling_code\": \"+880\"\n    },\n    \"BB\": {\n        \"country_name\": \"Barbados\",\n        \"dialling_code\": \"+1\"\n    },\n    \"BY\": {\n        \"country_name\": \"Belarus\",\n        \"dialling_code\": \"+375\"\n    },\n    \"BE\": {\n        \"country_name\": \"Belgium\",\n        \"dialling_code\": \"+32\"\n    },\n    \"BZ\": {\n        \"country_name\": \"Belize\",\n        \"dialling_code\": \"+501\"\n    },\n    \"BJ\": {\n        \"country_name\": \"Benin\",\n        \"dialling_code\": \"+229\"\n    },\n    \"BM\": {\n        \"country_name\": \"Bermuda\",\n        \"dialling_code\": \"+1\"\n    },\n    \"BT\": {\n        \"country_name\": \"Bhutan\",\n        \"dialling_code\": \"+975\"\n    },\n    \"BO\": {\n        \"country_name\": \"Bolivia\",\n        \"dialling_code\": \"+591\"\n    },\n    \"BA\": {\n        \"country_name\": \"Bosnia and Herzegovina\",\n        \"dialling_code\": \"+387\"\n    },\n    \"BW\": {\n        \"country_name\": \"Botswana\",\n        \"dialling_code\": \"+267\"\n    },\n    \"BR\": {\n        \"country_name\": \"Brazil\",\n        \"dialling_code\": \"+55\"\n    },\n    \"IO\": {\n        \"country_name\": \"British Indian Ocean Territory\",\n        \"dialling_code\": \"+246\"\n    },\n    \"VG\": {\n        \"country_name\": \"British Virgin Islands\",\n        \"dialling_code\": \"+1\"\n    },\n    \"BN\": {\n        \"country_name\": \"Brunei\",\n        \"dialling_code\": \"+673\"\n    },\n    \"BG\": {\n        \"country_name\": \"Bulgaria\",\n        \"dialling_code\": \"+359\"\n    },\n    \"BF\": {\n        \"country_name\": \"Burkina Faso\",\n        \"dialling_code\": \"+226\"\n    },\n    \"MM\": {\n        \"country_name\": \"Burma Myanmar\",\n        \"dialling_code\": \"+95\"\n    },\n    \"BI\": {\n        \"country_name\": \"Burundi\",\n        \"dialling_code\": \"+257\"\n    },\n    \"KH\": {\n        \"country_name\": \"Cambodia\",\n        \"dialling_code\": \"+855\"\n    },\n    \"CM\": {\n        \"country_name\": \"Cameroon\",\n        \"dialling_code\": \"+237\"\n    },\n    \"CA\": {\n        \"country_name\": \"Canada\",\n        \"dialling_code\": \"+1\"\n    },\n    \"CV\": {\n        \"country_name\": \"Cape Verde\",\n        \"dialling_code\": \"+238\"\n    },\n    \"KY\": {\n        \"country_name\": \"Cayman Islands\",\n        \"dialling_code\": \"+1\"\n    },\n    \"CF\": {\n        \"country_name\": \"Central African Republic\",\n        \"dialling_code\": \"+236\"\n    },\n    \"TD\": {\n        \"country_name\": \"Chad\",\n        \"dialling_code\": \"+235\"\n    },\n    \"CL\": {\n        \"country_name\": \"Chile\",\n        \"dialling_code\": \"+56\"\n    },\n    \"CN\": {\n        \"country_name\": \"China\",\n        \"dialling_code\": \"+86\"\n    },\n    \"CO\": {\n        \"country_name\": \"Colombia\",\n        \"dialling_code\": \"+57\"\n    },\n    \"KM\": {\n        \"country_name\": \"Comoros\",\n        \"dialling_code\": \"+269\"\n    },\n    \"CK\": {\n        \"country_name\": \"Cook Islands\",\n        \"dialling_code\": \"+682\"\n    },\n    \"CR\": {\n        \"country_name\": \"Costa Rica\",\n        \"dialling_code\": \"+506\"\n    },\n    \"CI\": {\n        \"country_name\": \"Côte d'Ivoire\",\n        \"dialling_code\": \"+225\"\n    },\n    \"HR\": {\n        \"country_name\": \"Croatia\",\n        \"dialling_code\": \"+385\"\n    },\n    \"CU\": {\n        \"country_name\": \"Cuba\",\n        \"dialling_code\": \"+53\"\n    },\n    \"CY\": {\n        \"country_name\": \"Cyprus\",\n        \"dialling_code\": \"+357\"\n    },\n    \"CZ\": {\n        \"country_name\": \"Czech Republic\",\n        \"dialling_code\": \"+420\"\n    },\n    \"CD\": {\n        \"country_name\": \"Democratic Republic of Congo\",\n        \"dialling_code\": \"+243\"\n    },\n    \"DK\": {\n        \"country_name\": \"Denmark\",\n        \"dialling_code\": \"+45\"\n    },\n    \"DJ\": {\n        \"country_name\": \"Djibouti\",\n        \"dialling_code\": \"+253\"\n    },\n    \"DM\": {\n        \"country_name\": \"Dominica\",\n        \"dialling_code\": \"+1\"\n    },\n    \"DO\": {\n        \"country_name\": \"Dominican Republic\",\n        \"dialling_code\": \"+1\"\n    },\n    \"EC\": {\n        \"country_name\": \"Ecuador\",\n        \"dialling_code\": \"+593\"\n    },\n    \"EG\": {\n        \"country_name\": \"Egypt\",\n        \"dialling_code\": \"+20\"\n    },\n    \"SV\": {\n        \"country_name\": \"El Salvador\",\n        \"dialling_code\": \"+503\"\n    },\n    \"GQ\": {\n        \"country_name\": \"Equatorial Guinea\",\n        \"dialling_code\": \"+240\"\n    },\n    \"ER\": {\n        \"country_name\": \"Eritrea\",\n        \"dialling_code\": \"+291\"\n    },\n    \"EE\": {\n        \"country_name\": \"Estonia\",\n        \"dialling_code\": \"+372\"\n    },\n    \"ET\": {\n        \"country_name\": \"Ethiopia\",\n        \"dialling_code\": \"+251\"\n    },\n    \"FK\": {\n        \"country_name\": \"Falkland Islands\",\n        \"dialling_code\": \"+500\"\n    },\n    \"FO\": {\n        \"country_name\": \"Faroe Islands\",\n        \"dialling_code\": \"+298\"\n    },\n    \"FM\": {\n        \"country_name\": \"Federated States of Micronesia\",\n        \"dialling_code\": \"+691\"\n    },\n    \"FJ\": {\n        \"country_name\": \"Fiji\",\n        \"dialling_code\": \"+679\"\n    },\n    \"FI\": {\n        \"country_name\": \"Finland\",\n        \"dialling_code\": \"+358\"\n    },\n    \"FR\": {\n        \"country_name\": \"France\",\n        \"dialling_code\": \"+33\"\n    },\n    \"GF\": {\n        \"country_name\": \"French Guiana\",\n        \"dialling_code\": \"+594\"\n    },\n    \"PF\": {\n        \"country_name\": \"French Polynesia\",\n        \"dialling_code\": \"+689\"\n    },\n    \"GA\": {\n        \"country_name\": \"Gabon\",\n        \"dialling_code\": \"+241\"\n    },\n    \"GE\": {\n        \"country_name\": \"Georgia\",\n        \"dialling_code\": \"+995\"\n    },\n    \"DE\": {\n        \"country_name\": \"Germany\",\n        \"dialling_code\": \"+49\"\n    },\n    \"GH\": {\n        \"country_name\": \"Ghana\",\n        \"dialling_code\": \"+233\"\n    },\n    \"GI\": {\n        \"country_name\": \"Gibraltar\",\n        \"dialling_code\": \"+350\"\n    },\n    \"GR\": {\n        \"country_name\": \"Greece\",\n        \"dialling_code\": \"+30\"\n    },\n    \"GL\": {\n        \"country_name\": \"Greenland\",\n        \"dialling_code\": \"+299\"\n    },\n    \"GD\": {\n        \"country_name\": \"Grenada\",\n        \"dialling_code\": \"+1\"\n    },\n    \"GP\": {\n        \"country_name\": \"Guadeloupe\",\n        \"dialling_code\": \"+590\"\n    },\n    \"GU\": {\n        \"country_name\": \"Guam\",\n        \"dialling_code\": \"+1\"\n    },\n    \"GT\": {\n        \"country_name\": \"Guatemala\",\n        \"dialling_code\": \"+502\"\n    },\n    \"GN\": {\n        \"country_name\": \"Guinea\",\n        \"dialling_code\": \"+224\"\n    },\n    \"GW\": {\n        \"country_name\": \"Guinea-Bissau\",\n        \"dialling_code\": \"+245\"\n    },\n    \"GY\": {\n        \"country_name\": \"Guyana\",\n        \"dialling_code\": \"+592\"\n    },\n    \"HT\": {\n        \"country_name\": \"Haiti\",\n        \"dialling_code\": \"+509\"\n    },\n    \"HN\": {\n        \"country_name\": \"Honduras\",\n        \"dialling_code\": \"+504\"\n    },\n    \"HK\": {\n        \"country_name\": \"Hong Kong\",\n        \"dialling_code\": \"+852\"\n    },\n    \"HU\": {\n        \"country_name\": \"Hungary\",\n        \"dialling_code\": \"+36\"\n    },\n    \"IS\": {\n        \"country_name\": \"Iceland\",\n        \"dialling_code\": \"+354\"\n    },\n    \"IN\": {\n        \"country_name\": \"India\",\n        \"dialling_code\": \"+91\"\n    },\n    \"ID\": {\n        \"country_name\": \"Indonesia\",\n        \"dialling_code\": \"+62\"\n    },\n    \"IR\": {\n        \"country_name\": \"Iran\",\n        \"dialling_code\": \"+98\"\n    },\n    \"IQ\": {\n        \"country_name\": \"Iraq\",\n        \"dialling_code\": \"+964\"\n    },\n    \"IE\": {\n        \"country_name\": \"Ireland\",\n        \"dialling_code\": \"+353\"\n    },\n    \"IL\": {\n        \"country_name\": \"Israel\",\n        \"dialling_code\": \"+972\"\n    },\n    \"IT\": {\n        \"country_name\": \"Italy\",\n        \"dialling_code\": \"+39\"\n    },\n    \"JM\": {\n        \"country_name\": \"Jamaica\",\n        \"dialling_code\": \"+1\"\n    },\n    \"JP\": {\n        \"country_name\": \"Japan\",\n        \"dialling_code\": \"+81\"\n    },\n    \"JO\": {\n        \"country_name\": \"Jordan\",\n        \"dialling_code\": \"+962\"\n    },\n    \"KZ\": {\n        \"country_name\": \"Kazakhstan\",\n        \"dialling_code\": \"+7\"\n    },\n    \"KE\": {\n        \"country_name\": \"Kenya\",\n        \"dialling_code\": \"+254\"\n    },\n    \"KI\": {\n        \"country_name\": \"Kiribati\",\n        \"dialling_code\": \"+686\"\n    },\n    \"XK\": {\n        \"country_name\": \"Kosovo\",\n        \"dialling_code\": \"+381\"\n    },\n    \"KW\": {\n        \"country_name\": \"Kuwait\",\n        \"dialling_code\": \"+965\"\n    },\n    \"KG\": {\n        \"country_name\": \"Kyrgyzstan\",\n        \"dialling_code\": \"+996\"\n    },\n    \"LA\": {\n        \"country_name\": \"Laos\",\n        \"dialling_code\": \"+856\"\n    },\n    \"LV\": {\n        \"country_name\": \"Latvia\",\n        \"dialling_code\": \"+371\"\n    },\n    \"LB\": {\n        \"country_name\": \"Lebanon\",\n        \"dialling_code\": \"+961\"\n    },\n    \"LS\": {\n        \"country_name\": \"Lesotho\",\n        \"dialling_code\": \"+266\"\n    },\n    \"LR\": {\n        \"country_name\": \"Liberia\",\n        \"dialling_code\": \"+231\"\n    },\n    \"LY\": {\n        \"country_name\": \"Libya\",\n        \"dialling_code\": \"+218\"\n    },\n    \"LI\": {\n        \"country_name\": \"Liechtenstein\",\n        \"dialling_code\": \"+423\"\n    },\n    \"LT\": {\n        \"country_name\": \"Lithuania\",\n        \"dialling_code\": \"+370\"\n    },\n    \"LU\": {\n        \"country_name\": \"Luxembourg\",\n        \"dialling_code\": \"+352\"\n    },\n    \"MO\": {\n        \"country_name\": \"Macau\",\n        \"dialling_code\": \"+853\"\n    },\n    \"MK\": {\n        \"country_name\": \"Macedonia\",\n        \"dialling_code\": \"+389\"\n    },\n    \"MG\": {\n        \"country_name\": \"Madagascar\",\n        \"dialling_code\": \"+261\"\n    },\n    \"MW\": {\n        \"country_name\": \"Malawi\",\n        \"dialling_code\": \"+265\"\n    },\n    \"MY\": {\n        \"country_name\": \"Malaysia\",\n        \"dialling_code\": \"+60\"\n    },\n    \"MV\": {\n        \"country_name\": \"Maldives\",\n        \"dialling_code\": \"+960\"\n    },\n    \"ML\": {\n        \"country_name\": \"Mali\",\n        \"dialling_code\": \"+223\"\n    },\n    \"MT\": {\n        \"country_name\": \"Malta\",\n        \"dialling_code\": \"+356\"\n    },\n    \"MH\": {\n        \"country_name\": \"Marshall Islands\",\n        \"dialling_code\": \"+692\"\n    },\n    \"MQ\": {\n        \"country_name\": \"Martinique\",\n        \"dialling_code\": \"+596\"\n    },\n    \"MR\": {\n        \"country_name\": \"Mauritania\",\n        \"dialling_code\": \"+222\"\n    },\n    \"MU\": {\n        \"country_name\": \"Mauritius\",\n        \"dialling_code\": \"+230\"\n    },\n    \"YT\": {\n        \"country_name\": \"Mayotte\",\n        \"dialling_code\": \"+262\"\n    },\n    \"MX\": {\n        \"country_name\": \"Mexico\",\n        \"dialling_code\": \"+52\"\n    },\n    \"MD\": {\n        \"country_name\": \"Moldova\",\n        \"dialling_code\": \"+373\"\n    },\n    \"MC\": {\n        \"country_name\": \"Monaco\",\n        \"dialling_code\": \"+377\"\n    },\n    \"MN\": {\n        \"country_name\": \"Mongolia\",\n        \"dialling_code\": \"+976\"\n    },\n    \"ME\": {\n        \"country_name\": \"Montenegro\",\n        \"dialling_code\": \"+382\"\n    },\n    \"MS\": {\n        \"country_name\": \"Montserrat\",\n        \"dialling_code\": \"+1\"\n    },\n    \"MA\": {\n        \"country_name\": \"Morocco\",\n        \"dialling_code\": \"+212\"\n    },\n    \"MZ\": {\n        \"country_name\": \"Mozambique\",\n        \"dialling_code\": \"+258\"\n    },\n    \"NA\": {\n        \"country_name\": \"Namibia\",\n        \"dialling_code\": \"+264\"\n    },\n    \"NR\": {\n        \"country_name\": \"Nauru\",\n        \"dialling_code\": \"+674\"\n    },\n    \"NP\": {\n        \"country_name\": \"Nepal\",\n        \"dialling_code\": \"+977\"\n    },\n    \"NL\": {\n        \"country_name\": \"Netherlands\",\n        \"dialling_code\": \"+31\"\n    },\n    \"AN\": {\n        \"country_name\": \"Netherlands Antilles\",\n        \"dialling_code\": \"+599\"\n    },\n    \"NC\": {\n        \"country_name\": \"New Caledonia\",\n        \"dialling_code\": \"+687\"\n    },\n    \"NZ\": {\n        \"country_name\": \"New Zealand\",\n        \"dialling_code\": \"+64\"\n    },\n    \"NI\": {\n        \"country_name\": \"Nicaragua\",\n        \"dialling_code\": \"+505\"\n    },\n    \"NE\": {\n        \"country_name\": \"Niger\",\n        \"dialling_code\": \"+227\"\n    },\n    \"NG\": {\n        \"country_name\": \"Nigeria\",\n        \"dialling_code\": \"+234\"\n    },\n    \"NU\": {\n        \"country_name\": \"Niue\",\n        \"dialling_code\": \"+683\"\n    },\n    \"NF\": {\n        \"country_name\": \"Norfolk Island\",\n        \"dialling_code\": \"+672\"\n    },\n    \"KP\": {\n        \"country_name\": \"North Korea\",\n        \"dialling_code\": \"+850\"\n    },\n    \"MP\": {\n        \"country_name\": \"Northern Mariana Islands\",\n        \"dialling_code\": \"+1\"\n    },\n    \"NO\": {\n        \"country_name\": \"Norway\",\n        \"dialling_code\": \"+47\"\n    },\n    \"OM\": {\n        \"country_name\": \"Oman\",\n        \"dialling_code\": \"+968\"\n    },\n    \"PK\": {\n        \"country_name\": \"Pakistan\",\n        \"dialling_code\": \"+92\"\n    },\n    \"PW\": {\n        \"country_name\": \"Palau\",\n        \"dialling_code\": \"+680\"\n    },\n    \"PS\": {\n        \"country_name\": \"Palestine\",\n        \"dialling_code\": \"+970\"\n    },\n    \"PA\": {\n        \"country_name\": \"Panama\",\n        \"dialling_code\": \"+507\"\n    },\n    \"PG\": {\n        \"country_name\": \"Papua New Guinea\",\n        \"dialling_code\": \"+675\"\n    },\n    \"PY\": {\n        \"country_name\": \"Paraguay\",\n        \"dialling_code\": \"+595\"\n    },\n    \"PE\": {\n        \"country_name\": \"Peru\",\n        \"dialling_code\": \"+51\"\n    },\n    \"PH\": {\n        \"country_name\": \"Philippines\",\n        \"dialling_code\": \"+63\"\n    },\n    \"PL\": {\n        \"country_name\": \"Poland\",\n        \"dialling_code\": \"+48\"\n    },\n    \"PT\": {\n        \"country_name\": \"Portugal\",\n        \"dialling_code\": \"+351\"\n    },\n    \"PR\": {\n        \"country_name\": \"Puerto Rico\",\n        \"dialling_code\": \"+1\"\n    },\n    \"QA\": {\n        \"country_name\": \"Qatar\",\n        \"dialling_code\": \"+974\"\n    },\n    \"CG\": {\n        \"country_name\": \"Republic of the Congo\",\n        \"dialling_code\": \"+242\"\n    },\n    \"RE\": {\n        \"country_name\": \"Réunion\",\n        \"dialling_code\": \"+262\"\n    },\n    \"RO\": {\n        \"country_name\": \"Romania\",\n        \"dialling_code\": \"+40\"\n    },\n    \"RU\": {\n        \"country_name\": \"Russia\",\n        \"dialling_code\": \"+7\"\n    },\n    \"RW\": {\n        \"country_name\": \"Rwanda\",\n        \"dialling_code\": \"+250\"\n    },\n    \"BL\": {\n        \"country_name\": \"Saint Barthélemy\",\n        \"dialling_code\": \"+590\"\n    },\n    \"SH\": {\n        \"country_name\": \"Saint Helena\",\n        \"dialling_code\": \"+290\"\n    },\n    \"KN\": {\n        \"country_name\": \"Saint Kitts and Nevis\",\n        \"dialling_code\": \"+1\"\n    },\n    \"MF\": {\n        \"country_name\": \"Saint Martin\",\n        \"dialling_code\": \"+590\"\n    },\n    \"PM\": {\n        \"country_name\": \"Saint Pierre and Miquelon\",\n        \"dialling_code\": \"+508\"\n    },\n    \"VC\": {\n        \"country_name\": \"Saint Vincent and the Grenadines\",\n        \"dialling_code\": \"+1\"\n    },\n    \"WS\": {\n        \"country_name\": \"Samoa\",\n        \"dialling_code\": \"+685\"\n    },\n    \"SM\": {\n        \"country_name\": \"San Marino\",\n        \"dialling_code\": \"+378\"\n    },\n    \"ST\": {\n        \"country_name\": \"São Tomé and Príncipe\",\n        \"dialling_code\": \"+239\"\n    },\n    \"SA\": {\n        \"country_name\": \"Saudi Arabia\",\n        \"dialling_code\": \"+966\"\n    },\n    \"SN\": {\n        \"country_name\": \"Senegal\",\n        \"dialling_code\": \"+221\"\n    },\n    \"RS\": {\n        \"country_name\": \"Serbia\",\n        \"dialling_code\": \"+381\"\n    },\n    \"SC\": {\n        \"country_name\": \"Seychelles\",\n        \"dialling_code\": \"+248\"\n    },\n    \"SL\": {\n        \"country_name\": \"Sierra Leone\",\n        \"dialling_code\": \"+232\"\n    },\n    \"SG\": {\n        \"country_name\": \"Singapore\",\n        \"dialling_code\": \"+65\"\n    },\n    \"SK\": {\n        \"country_name\": \"Slovakia\",\n        \"dialling_code\": \"+421\"\n    },\n    \"SI\": {\n        \"country_name\": \"Slovenia\",\n        \"dialling_code\": \"+386\"\n    },\n    \"SB\": {\n        \"country_name\": \"Solomon Islands\",\n        \"dialling_code\": \"+677\"\n    },\n    \"SO\": {\n        \"country_name\": \"Somalia\",\n        \"dialling_code\": \"+252\"\n    },\n    \"ZA\": {\n        \"country_name\": \"South Africa\",\n        \"dialling_code\": \"+27\"\n    },\n    \"KR\": {\n        \"country_name\": \"South Korea\",\n        \"dialling_code\": \"+82\"\n    },\n    \"ES\": {\n        \"country_name\": \"Spain\",\n        \"dialling_code\": \"+34\"\n    },\n    \"LK\": {\n        \"country_name\": \"Sri Lanka\",\n        \"dialling_code\": \"+94\"\n    },\n    \"LC\": {\n        \"country_name\": \"St. Lucia\",\n        \"dialling_code\": \"+1\"\n    },\n    \"SD\": {\n        \"country_name\": \"Sudan\",\n        \"dialling_code\": \"+249\"\n    },\n    \"SR\": {\n        \"country_name\": \"Suriname\",\n        \"dialling_code\": \"+597\"\n    },\n    \"SZ\": {\n        \"country_name\": \"Swaziland\",\n        \"dialling_code\": \"+268\"\n    },\n    \"SE\": {\n        \"country_name\": \"Sweden\",\n        \"dialling_code\": \"+46\"\n    },\n    \"CH\": {\n        \"country_name\": \"Switzerland\",\n        \"dialling_code\": \"+41\"\n    },\n    \"SY\": {\n        \"country_name\": \"Syria\",\n        \"dialling_code\": \"+963\"\n    },\n    \"TW\": {\n        \"country_name\": \"Taiwan\",\n        \"dialling_code\": \"+886\"\n    },\n    \"TJ\": {\n        \"country_name\": \"Tajikistan\",\n        \"dialling_code\": \"+992\"\n    },\n    \"TZ\": {\n        \"country_name\": \"Tanzania\",\n        \"dialling_code\": \"+255\"\n    },\n    \"TH\": {\n        \"country_name\": \"Thailand\",\n        \"dialling_code\": \"+66\"\n    },\n    \"BS\": {\n        \"country_name\": \"The Bahamas\",\n        \"dialling_code\": \"+1\"\n    },\n    \"GM\": {\n        \"country_name\": \"The Gambia\",\n        \"dialling_code\": \"+220\"\n    },\n    \"TL\": {\n        \"country_name\": \"Timor-Leste\",\n        \"dialling_code\": \"+670\"\n    },\n    \"TG\": {\n        \"country_name\": \"Togo\",\n        \"dialling_code\": \"+228\"\n    },\n    \"TK\": {\n        \"country_name\": \"Tokelau\",\n        \"dialling_code\": \"+690\"\n    },\n    \"TO\": {\n        \"country_name\": \"Tonga\",\n        \"dialling_code\": \"+676\"\n    },\n    \"TT\": {\n        \"country_name\": \"Trinidad and Tobago\",\n        \"dialling_code\": \"+1\"\n    },\n    \"TN\": {\n        \"country_name\": \"Tunisia\",\n        \"dialling_code\": \"+216\"\n    },\n    \"TR\": {\n        \"country_name\": \"Turkey\",\n        \"dialling_code\": \"+90\"\n    },\n    \"TM\": {\n        \"country_name\": \"Turkmenistan\",\n        \"dialling_code\": \"+993\"\n    },\n    \"TC\": {\n        \"country_name\": \"Turks and Caicos Islands\",\n        \"dialling_code\": \"+1\"\n    },\n    \"TV\": {\n        \"country_name\": \"Tuvalu\",\n        \"dialling_code\": \"+688\"\n    },\n    \"UG\": {\n        \"country_name\": \"Uganda\",\n        \"dialling_code\": \"+256\"\n    },\n    \"UA\": {\n        \"country_name\": \"Ukraine\",\n        \"dialling_code\": \"+380\"\n    },\n    \"AE\": {\n        \"country_name\": \"United Arab Emirates\",\n        \"dialling_code\": \"+971\"\n    },\n    \"GB\": {\n        \"country_name\": \"United Kingdom\",\n        \"dialling_code\": \"+44\"\n    },\n    \"US\": {\n        \"country_name\": \"United States\",\n        \"dialling_code\": \"+1\"\n    },\n    \"UY\": {\n        \"country_name\": \"Uruguay\",\n        \"dialling_code\": \"+598\"\n    },\n    \"VI\": {\n        \"country_name\": \"US Virgin Islands\",\n        \"dialling_code\": \"+1\"\n    },\n    \"UZ\": {\n        \"country_name\": \"Uzbekistan\",\n        \"dialling_code\": \"+998\"\n    },\n    \"VU\": {\n        \"country_name\": \"Vanuatu\",\n        \"dialling_code\": \"+678\"\n    },\n    \"VA\": {\n        \"country_name\": \"Vatican City\",\n        \"dialling_code\": \"+39\"\n    },\n    \"VE\": {\n        \"country_name\": \"Venezuela\",\n        \"dialling_code\": \"+58\"\n    },\n    \"VN\": {\n        \"country_name\": \"Vietnam\",\n        \"dialling_code\": \"+84\"\n    },\n    \"WF\": {\n        \"country_name\": \"Wallis and Futuna\",\n        \"dialling_code\": \"+681\"\n    },\n    \"YE\": {\n        \"country_name\": \"Yemen\",\n        \"dialling_code\": \"+967\"\n    },\n    \"ZM\": {\n        \"country_name\": \"Zambia\",\n        \"dialling_code\": \"+260\"\n    },\n    \"ZW\": {\n        \"country_name\": \"Zimbabwe\",\n        \"dialling_code\": \"+263\"\n    }\n}"
+						}
+					]
+				}
+			],
+			"description": "The numverify API supports phone number validation for a total of 232 countries (territories) around the world. Using the API's `countries` endpoint, you may access a comprehensive list of supported areas, including country names and dialling codes."
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "{{numverifyAPI}}",
+				"type": "string"
+			},
+			{
+				"key": "in",
+				"value": "query",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "access_key",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "access_key",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
